@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark fixed-top justify-content-between">
+    <a class="navbar-brand"></a>
+    <form class="form-inline">
+        <button class="btn" (click)="admin()" *ngIf="user">Admin</button>
+        <button class="btn" (click)="logout()" *ngIf="user">Log Out</button>
+        <button class="btn" (click)="login()" *ngIf="!user">Log In</button>
+    </form>
+  </nav>
+<body id="page-top">
+    
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+        <h1 class="mb-1" *ngIf="user">Greetings, {{ user?.displayName }}!</h1>
+        <h1 class="mb-1" *ngIf="!user">You are logged out!</h1>
+        <h3 class="mb-5">
+            <em *ngIf="user">Email: {{ user?.email }}</em>
+            <em *ngIf="!user">Please log in again.</em>
+        </h3>
+        
+        </div>
+        <div class="overlay"></div>
+    </header>
+</body>

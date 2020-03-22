@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign Up</h5>
+          <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" class="form-signin">
+            <div class="row" *ngIf="authError">
+              <div class="col-12 alert alert-danger">
+                {{ authError?.message }}
+              </div>
+            </div>
+            <div class="form-label-group">
+              <!-- <label for="inputUserame">First name</label> -->
+              <input ngModel #firstname="ngModel" name="firstName" type="text" id="inputUserame" class="form-control" placeholder="First name" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+              <!-- <label for="inputUserame2">Last name</label> -->
+              <input ngModel #lastname="ngModel" name="lastName" type="text" id="inputUserame2" class="form-control" placeholder="Last name" required>
+            </div>
+
+            <div class="form-label-group">
+              <input ngModel #email="ngModel" name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+              <!-- <label for="inputEmail">Email address</label> -->
+            </div>
+
+            <div class="form-label-group">
+              <input ngModel #password="ngModel" name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <!-- <label for="inputPassword">Password</label> -->
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+            <hr class="my-4">
+            <a class="btn btn-lg btn-primary btn-block text-uppercase" href="/login">Log In</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
